@@ -1,27 +1,19 @@
 <template>
-  <div id="app">
+  <v-app>
     <Header v-bind:appName="name" />
-    <router-view />
-    <!-- <h3>Inject your own html here</h3>
-    <form @submit.prevent=onSubmit>
-      <input v-model="rawHTML" type='text'>
-      <input type="submit">
-    </form> -->
-  </div>
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 import Header from './components/layout/Header'
 export default {
-  name: 'app',
+  name: 'Mikes App',
+
   components: {
     Header
-  },
-  methods: {
-    onSubmit() {
-      console.log('this is a dangerous practice')
-      this.name = this.rawHTML
-    }
   },
   data() {
     return {
