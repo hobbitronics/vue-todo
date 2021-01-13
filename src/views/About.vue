@@ -5,17 +5,20 @@
     <v-btn :disabled="disabled" @[argument]="showAuthor"
       >{{ authorBtnLabel }} Author</v-btn
     >
+    <v-spacer></v-spacer>
     <br />
     <v-btn :disabled="disabled" @[argument]="upgrade" v-if="version < 20"
       >Upgrade to v{{ version + 1 }}.0.0</v-btn
     >
+    <v-spacer></v-spacer>
     <br />
     <v-btn @click="enable">{{ toggleLabel }} buttons</v-btn>
-    <p>time is: {{ Date.now() }} Enter your name</p>
-    <form @submit.prevent="setAuthor(name)">
-      <input type="text" v-model="name" />
-      <input type="submit" />
-    </form>
+    <v-spacer></v-spacer>
+    <p>time is: {{ Date.now() }}</p>
+    <v-form @submit.prevent="setAuthor(name)">
+      <v-text-field label="Enter your name" type="text" v-model="name" />
+      <v-btn type="submit">Submit</v-btn>
+    </v-form>
   </div>
 </template>
 
