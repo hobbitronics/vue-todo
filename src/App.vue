@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <Header v-bind:appName="name" />
     <v-main>
       <router-view />
@@ -10,7 +10,7 @@
 <script>
 import Header from './components/layout/Header'
 export default {
-  name: 'Mikes App',
+  name: 'app',
 
   components: {
     Header
