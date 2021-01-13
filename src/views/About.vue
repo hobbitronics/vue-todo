@@ -16,7 +16,12 @@
     <v-spacer></v-spacer>
     <p>time is: {{ Date.now() }}</p>
     <v-form @submit.prevent="setAuthor(name)">
-      <v-text-field label="Enter your name" type="text" v-model="name" />
+      <v-text-field
+        outlined
+        label="Enter your name"
+        type="text"
+        v-model="name"
+      />
       <v-btn type="submit">Submit</v-btn>
     </v-form>
   </div>
