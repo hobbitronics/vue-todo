@@ -1,31 +1,31 @@
 <template>
   <div id="app">
     <Header v-bind:appName="name" />
-    <router-view/>
-    <h3>Inject your own html here</h3>
+    <router-view />
+    <!-- <h3>Inject your own html here</h3>
     <form @submit.prevent=onSubmit>
       <input v-model="rawHTML" type='text'>
       <input type="submit">
-    </form>
+    </form> -->
   </div>
 </template>
 
 <script>
-import Header from './components/layout/Header';
+import Header from './components/layout/Header'
 export default {
-  name:"app",
+  name: 'app',
   components: {
     Header
   },
   methods: {
-    onSubmit () {
+    onSubmit() {
       console.log('this is a dangerous practice')
       this.name = this.rawHTML
     }
   },
-  data () {
+  data() {
     return {
-      name: "<h1>TodoList</h1>",
+      name: '<h1>Mikes App</h1>',
       rawHTML: ''
     }
   }
