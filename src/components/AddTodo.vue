@@ -1,32 +1,46 @@
 <template>
-    <div>
-        <form @submit="addTodo">
-            <input type="text" v-model="title" name="title" placeholder="Add todo">
-            <input type="submit" value="Submit" class="btn">
-        </form>
-    </div>
+  <v-container>
+    <v-row>
+      <v-form @submit="addTodo">
+        <v-text-field
+          outlined
+          type="text"
+          v-model="title"
+          name="title"
+          placeholder="Add todo"
+          class="todoInput "
+        />
+        <v-btn type="submit" value="Submit">Add Todo</v-btn>
+      </v-form>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-    name: "AddTodo",
-    data() {
-        return {
-            title: ''
-        }
-    },
-    methods: {
-        addTodo (e) {
-            e.preventDefault();
-            const newTodo = {
-                // id: Math.random()*1000,  //the api gives it an id now
-                title: this.title,
-                complete: false
-            }
-            // send up to parent
-            this.$emit('add-todo', newTodo);
-            this.title = '';
-        }
+  name: 'AddTodo',
+  data() {
+    return {
+      title: ''
     }
+  },
+  methods: {
+    addTodo(e) {
+      e.preventDefault()
+      const newTodo = {
+        title: this.title,
+        complete: false
+      }
+      // send up to parent
+      this.$emit('add-todo', newTodo)
+      this.title = ''
+    }
+  }
 }
 </script>
+
+<style>
+.todoInput {
+  max-width: 50ch;
+}
+</style>
