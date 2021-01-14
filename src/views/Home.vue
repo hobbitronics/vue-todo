@@ -44,12 +44,16 @@ export default {
       // this.todos = [...this.todos, newTodo];
     },
     markComplete(id) {
-      const index = this.todos.findIndex(el => el.id == id)
+      const index = this.todos.findIndex(el => el.id === id)
+      console.log('index: ' + index)
       axios
         .patch(`http://jsonplaceholder.typicode.com/todos/${id}`, {
           completed: !this.todos[index].completed
         })
-        .then(res => (this.todos[index].completed = res.data.completed))
+        .then(res => {
+          this.todos[index].completed = res.data.completed
+          console.log('todo: ' + this.todos[index].completed + 'should be ' + res.data.completed)
+        })
         .catch(err => console.log(err))
     }
   },
