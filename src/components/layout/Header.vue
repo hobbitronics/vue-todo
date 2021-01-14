@@ -1,6 +1,5 @@
 <template>
-  <header class="header">
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="primary" light>
       <span v-html="appName"></span>
       <div id="nav">
         <router-link to="/">Home</router-link> |
@@ -10,7 +9,6 @@
       <v-spacer></v-spacer>
       <v-icon>mdi-open-in-new</v-icon>
     </v-app-bar>
-  </header>
 </template>
 
 <script>
@@ -21,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.header {
+/* .header {
   background: #333;
   color: #fff;
   text-align: center;
@@ -31,5 +29,5 @@ export default {
   color: #fff;
   padding-right: 5px;
   text-decoration: none;
-}
+} */
 </style>
