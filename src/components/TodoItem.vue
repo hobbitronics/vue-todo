@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row justify="space-between">
+    <v-row justify="space-between" class="todo-item">
       <v-checkbox
         v-model="completed"
         :id="toString(todo.id)"
@@ -12,7 +12,7 @@
         icon
         elevation="2"
         @click="$emit('del-todo', todo.id)"
-        class="red float-right"
+        class="red float-right align-self-center"
         >x</v-btn
       >
     </v-row>
@@ -32,6 +32,12 @@ export default {
 </script>
 
 <style scoped>
+.todo-item {
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+  }
+
 .is-complete {
   text-decoration: line-through;
 }
