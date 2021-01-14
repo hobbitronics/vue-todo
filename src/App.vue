@@ -1,9 +1,5 @@
 <template>
   <v-app id="app">
-    <link
-      href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css"
-      rel="stylesheet"
-    />
     <Header v-bind:appName="name" />
     <v-main>
       <router-view />
