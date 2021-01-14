@@ -36,6 +36,6 @@ export default {
   text-decoration: line-through;
 }
 span {
-  padding-left: 1rem;
+  padding: 1.3rem 1rem;
 }
 </style>
