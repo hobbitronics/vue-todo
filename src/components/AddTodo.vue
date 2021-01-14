@@ -1,17 +1,19 @@
 <template>
   <v-container>
-    <v-row>
-      <v-form @submit="addTodo">
-        <v-text-field
-          outlined
-          type="text"
-          v-model="title"
-          name="title"
-          placeholder="Add todo"
-          class="todoInput "
-        />
-        <v-btn type="submit" value="Submit">Add Todo</v-btn>
-      </v-form>
+    <v-row justify="center">
+      <v-col cols="6">
+        <v-form @submit="addTodo">
+          <v-text-field
+            outlined
+            type="text"
+            v-model="title"
+            name="title"
+            placeholder="Add todo"
+            class="todoInput "
+          />
+          <v-btn type="submit" value="Submit">Add Todo</v-btn>
+        </v-form>
+      </v-col>
     </v-row>
   </v-container>
 </template>
